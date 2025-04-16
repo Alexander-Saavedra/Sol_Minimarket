@@ -35,12 +35,12 @@ namespace Sol_Minimarket.Datos
                 {
                     Cadena.ConnectionString = Cadena.ConnectionString + "Integrated Security = SSPI";
                 }
-                else 
+                else
                 {
-                    Cadena.ConnectionString = Cadena.ConnectionString + "User ID="+this.Usuario+"; Password=" + this.Clave;
+                    Cadena.ConnectionString = Cadena.ConnectionString + "User ID=" + this.Usuario + "; Password=" + this.Clave;
                 }
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 Cadena = null;
                 throw ex;
