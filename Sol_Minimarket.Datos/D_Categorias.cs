@@ -20,7 +20,7 @@ namespace Sol_Minimarket.Datos
 
             try
             {
-                SQLCon = Conexion.getInsstancia().CrearConexion();
+                SQLCon = Conexion.getInstancia().CrearConexion();
                 SqlCommand Comando = new SqlCommand("USP_Listado_ca", SQLCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
