@@ -8,7 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using Sol_Minimarket.Entidades;
+=======
+>>>>>>> 4fec03b7ff8fdc59253cf8a4e9a51add0cd9b660
 =======
 >>>>>>> 4fec03b7ff8fdc59253cf8a4e9a51add0cd9b660
 using Sol_Minimarket.Negocio;
@@ -21,6 +24,7 @@ namespace Sol_Minimarket.Presentacion
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
         #region "Mis variables"
         int EstadoGuarda = 0; // Sin ninguna accion
@@ -36,6 +40,11 @@ namespace Sol_Minimarket.Presentacion
             Dgv_principal.Columns[1].Width = 300;
             Dgv_principal.Columns[1].HeaderText = "categoria";
 =======
+=======
+        #region "Mis metodos"
+        private void  Formato_ca()
+        {
+>>>>>>> 4fec03b7ff8fdc59253cf8a4e9a51add0cd9b660
             Dgv_principal.Columns[0].Widht = 100;
             Dgv_principal.Columns[0].HeaderText = "Coidgo_ca";
             Dgv_principal.Columns[1].Widht = 300;
@@ -72,6 +81,7 @@ namespace Sol_Minimarket.Presentacion
             this.Listado_ca("%");
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         private void Btn_guardar_Click(object sender, EventArgs e)
         {
@@ -103,6 +113,8 @@ namespace Sol_Minimarket.Presentacion
         {
 
         }
+=======
+>>>>>>> 4fec03b7ff8fdc59253cf8a4e9a51add0cd9b660
 =======
 >>>>>>> 4fec03b7ff8fdc59253cf8a4e9a51add0cd9b660
     }
