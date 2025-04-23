@@ -28,27 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.Tbp_principal = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lbl_buscar = new System.Windows.Forms.Label();
             this.Txt_buscar = new System.Windows.Forms.TextBox();
             this.Btn_buscar = new System.Windows.Forms.Button();
             this.Dgv_principal = new System.Windows.Forms.DataGridView();
-            this.Btn_nuevo = new System.Windows.Forms.Button();
-            this.Btn_actualizar = new System.Windows.Forms.Button();
-            this.Btn_eliminar = new System.Windows.Forms.Button();
-            this.Btn_reporte = new System.Windows.Forms.Button();
-            this.Btn_salir = new System.Windows.Forms.Button();
-            this.Tbp_principal = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Btn_guardar = new System.Windows.Forms.Button();
             this.Btn_cancelar = new System.Windows.Forms.Button();
             this.Txt_descripcion_ca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_principal)).BeginInit();
+            this.Btn_eliminar = new System.Windows.Forms.Button();
+            this.Btn_reporte = new System.Windows.Forms.Button();
+            this.Btn_actualizar = new System.Windows.Forms.Button();
+            this.Btn_salir = new System.Windows.Forms.Button();
+            this.Btn_nuevo = new System.Windows.Forms.Button();
+            this.Btn_retornar = new System.Windows.Forms.Button();
             this.Tbp_principal.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_principal)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // Tbp_principal
+            // 
+            this.Tbp_principal.Controls.Add(this.tabPage1);
+            this.Tbp_principal.Controls.Add(this.tabPage2);
+            this.Tbp_principal.Location = new System.Drawing.Point(30, 30);
+            this.Tbp_principal.Name = "Tbp_principal";
+            this.Tbp_principal.SelectedIndex = 0;
+            this.Tbp_principal.Size = new System.Drawing.Size(752, 333);
+            this.Tbp_principal.TabIndex = 10;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.lbl_buscar);
+            this.tabPage1.Controls.Add(this.Txt_buscar);
+            this.tabPage1.Controls.Add(this.Btn_buscar);
+            this.tabPage1.Controls.Add(this.Dgv_principal);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(744, 300);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Listado";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // lbl_buscar
             // 
@@ -58,7 +83,6 @@
             this.lbl_buscar.Size = new System.Drawing.Size(59, 20);
             this.lbl_buscar.TabIndex = 0;
             this.lbl_buscar.Text = "Buscar";
-            this.lbl_buscar.Click += new System.EventHandler(this.label1_Click);
             // 
             // Txt_buscar
             // 
@@ -81,7 +105,7 @@
             this.Dgv_principal.AllowUserToAddRows = false;
             this.Dgv_principal.AllowUserToDeleteRows = false;
             this.Dgv_principal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_principal.Location = new System.Drawing.Point(20, 77);
+            this.Dgv_principal.Location = new System.Drawing.Point(20, 71);
             this.Dgv_principal.Name = "Dgv_principal";
             this.Dgv_principal.ReadOnly = true;
             this.Dgv_principal.RowHeadersWidth = 62;
@@ -89,84 +113,9 @@
             this.Dgv_principal.Size = new System.Drawing.Size(600, 200);
             this.Dgv_principal.TabIndex = 3;
             // 
-            // Btn_nuevo
-            // 
-            this.Btn_nuevo.Location = new System.Drawing.Point(20, 300);
-            this.Btn_nuevo.Name = "Btn_nuevo";
-            this.Btn_nuevo.Size = new System.Drawing.Size(130, 40);
-            this.Btn_nuevo.TabIndex = 4;
-            this.Btn_nuevo.Text = "Nuevo";
-            this.Btn_nuevo.UseVisualStyleBackColor = true;
-            // 
-            // Btn_actualizar
-            // 
-            this.Btn_actualizar.Location = new System.Drawing.Point(162, 300);
-            this.Btn_actualizar.Name = "Btn_actualizar";
-            this.Btn_actualizar.Size = new System.Drawing.Size(130, 40);
-            this.Btn_actualizar.TabIndex = 5;
-            this.Btn_actualizar.Text = "Actualizar";
-            this.Btn_actualizar.UseVisualStyleBackColor = true;
-            this.Btn_actualizar.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // Btn_eliminar
-            // 
-            this.Btn_eliminar.Location = new System.Drawing.Point(304, 300);
-            this.Btn_eliminar.Name = "Btn_eliminar";
-            this.Btn_eliminar.Size = new System.Drawing.Size(130, 40);
-            this.Btn_eliminar.TabIndex = 6;
-            this.Btn_eliminar.Text = "Eliminar";
-            this.Btn_eliminar.UseVisualStyleBackColor = true;
-            // 
-            // Btn_reporte
-            // 
-            this.Btn_reporte.Location = new System.Drawing.Point(445, 300);
-            this.Btn_reporte.Name = "Btn_reporte";
-            this.Btn_reporte.Size = new System.Drawing.Size(130, 40);
-            this.Btn_reporte.TabIndex = 7;
-            this.Btn_reporte.Text = "Reporte";
-            this.Btn_reporte.UseVisualStyleBackColor = true;
-            // 
-            // Btn_salir
-            // 
-            this.Btn_salir.Location = new System.Drawing.Point(588, 300);
-            this.Btn_salir.Name = "Btn_salir";
-            this.Btn_salir.Size = new System.Drawing.Size(130, 40);
-            this.Btn_salir.TabIndex = 8;
-            this.Btn_salir.Text = "Salir";
-            this.Btn_salir.UseVisualStyleBackColor = true;
-            // 
-            // Tbp_principal
-            // 
-            this.Tbp_principal.Controls.Add(this.tabPage1);
-            this.Tbp_principal.Controls.Add(this.tabPage2);
-            this.Tbp_principal.Location = new System.Drawing.Point(12, 12);
-            this.Tbp_principal.Name = "Tbp_principal";
-            this.Tbp_principal.SelectedIndex = 0;
-            this.Tbp_principal.Size = new System.Drawing.Size(740, 391);
-            this.Tbp_principal.TabIndex = 9;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.lbl_buscar);
-            this.tabPage1.Controls.Add(this.Btn_eliminar);
-            this.tabPage1.Controls.Add(this.Btn_reporte);
-            this.tabPage1.Controls.Add(this.Btn_actualizar);
-            this.tabPage1.Controls.Add(this.Btn_salir);
-            this.tabPage1.Controls.Add(this.Txt_buscar);
-            this.tabPage1.Controls.Add(this.Btn_buscar);
-            this.tabPage1.Controls.Add(this.Dgv_principal);
-            this.tabPage1.Controls.Add(this.Btn_nuevo);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(732, 358);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Listado";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.Btn_retornar);
             this.tabPage2.Controls.Add(this.Btn_guardar);
             this.tabPage2.Controls.Add(this.Btn_cancelar);
             this.tabPage2.Controls.Add(this.Txt_descripcion_ca);
@@ -174,20 +123,21 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(732, 358);
+            this.tabPage2.Size = new System.Drawing.Size(744, 300);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // Btn_guardar
             // 
-            this.Btn_guardar.Location = new System.Drawing.Point(311, 78);
+            this.Btn_guardar.Location = new System.Drawing.Point(280, 78);
             this.Btn_guardar.Name = "Btn_guardar";
             this.Btn_guardar.Size = new System.Drawing.Size(100, 30);
             this.Btn_guardar.TabIndex = 3;
             this.Btn_guardar.Text = "Guardar";
             this.Btn_guardar.UseVisualStyleBackColor = true;
+            this.Btn_guardar.Visible = false;
+            this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
             // 
             // Btn_cancelar
             // 
@@ -197,10 +147,11 @@
             this.Btn_cancelar.TabIndex = 2;
             this.Btn_cancelar.Text = "Cancelar";
             this.Btn_cancelar.UseVisualStyleBackColor = true;
+            this.Btn_cancelar.Visible = false;
             // 
             // Txt_descripcion_ca
             // 
-            this.Txt_descripcion_ca.Location = new System.Drawing.Point(130, 37);
+            this.Txt_descripcion_ca.Location = new System.Drawing.Point(145, 34);
             this.Txt_descripcion_ca.Name = "Txt_descripcion_ca";
             this.Txt_descripcion_ca.Size = new System.Drawing.Size(331, 26);
             this.Txt_descripcion_ca.TabIndex = 1;
@@ -210,23 +161,85 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(41, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 20);
+            this.label1.Size = new System.Drawing.Size(98, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Categoria:";
+            this.label1.Text = "Categoria:(*)";
+            // 
+            // Btn_eliminar
+            // 
+            this.Btn_eliminar.Location = new System.Drawing.Point(344, 384);
+            this.Btn_eliminar.Name = "Btn_eliminar";
+            this.Btn_eliminar.Size = new System.Drawing.Size(130, 40);
+            this.Btn_eliminar.TabIndex = 6;
+            this.Btn_eliminar.Text = "Eliminar";
+            this.Btn_eliminar.UseVisualStyleBackColor = true;
+            // 
+            // Btn_reporte
+            // 
+            this.Btn_reporte.Location = new System.Drawing.Point(485, 384);
+            this.Btn_reporte.Name = "Btn_reporte";
+            this.Btn_reporte.Size = new System.Drawing.Size(130, 40);
+            this.Btn_reporte.TabIndex = 7;
+            this.Btn_reporte.Text = "Reporte";
+            this.Btn_reporte.UseVisualStyleBackColor = true;
+            // 
+            // Btn_actualizar
+            // 
+            this.Btn_actualizar.Location = new System.Drawing.Point(202, 384);
+            this.Btn_actualizar.Name = "Btn_actualizar";
+            this.Btn_actualizar.Size = new System.Drawing.Size(130, 40);
+            this.Btn_actualizar.TabIndex = 5;
+            this.Btn_actualizar.Text = "Actualizar";
+            this.Btn_actualizar.UseVisualStyleBackColor = true;
+            this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
+            // 
+            // Btn_salir
+            // 
+            this.Btn_salir.Location = new System.Drawing.Point(628, 384);
+            this.Btn_salir.Name = "Btn_salir";
+            this.Btn_salir.Size = new System.Drawing.Size(130, 40);
+            this.Btn_salir.TabIndex = 8;
+            this.Btn_salir.Text = "Salir";
+            this.Btn_salir.UseVisualStyleBackColor = true;
+            // 
+            // Btn_nuevo
+            // 
+            this.Btn_nuevo.Location = new System.Drawing.Point(66, 384);
+            this.Btn_nuevo.Name = "Btn_nuevo";
+            this.Btn_nuevo.Size = new System.Drawing.Size(130, 40);
+            this.Btn_nuevo.TabIndex = 4;
+            this.Btn_nuevo.Text = "Nuevo";
+            this.Btn_nuevo.UseVisualStyleBackColor = true;
+            this.Btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
+            // 
+            // Btn_retornar
+            // 
+            this.Btn_retornar.Location = new System.Drawing.Point(386, 78);
+            this.Btn_retornar.Name = "Btn_retornar";
+            this.Btn_retornar.Size = new System.Drawing.Size(100, 30);
+            this.Btn_retornar.TabIndex = 4;
+            this.Btn_retornar.Text = "Retornar";
+            this.Btn_retornar.UseVisualStyleBackColor = true;
+            this.Btn_retornar.Visible = false;
+            this.Btn_retornar.Click += new System.EventHandler(this.button1_Click);
             // 
             // Frm_Categorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 444);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Tbp_principal);
+            this.Controls.Add(this.Btn_eliminar);
+            this.Controls.Add(this.Btn_reporte);
+            this.Controls.Add(this.Btn_nuevo);
+            this.Controls.Add(this.Btn_actualizar);
+            this.Controls.Add(this.Btn_salir);
             this.Name = "Frm_Categorias";
             this.Text = "Categorias";
-            this.Load += new System.EventHandler(this.Frm_Categorias_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_principal)).EndInit();
             this.Tbp_principal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_principal)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
@@ -235,21 +248,22 @@
 
         #endregion
 
+        private System.Windows.Forms.TabControl Tbp_principal;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label lbl_buscar;
+        private System.Windows.Forms.Button Btn_eliminar;
+        private System.Windows.Forms.Button Btn_reporte;
+        private System.Windows.Forms.Button Btn_actualizar;
+        private System.Windows.Forms.Button Btn_salir;
         private System.Windows.Forms.TextBox Txt_buscar;
         private System.Windows.Forms.Button Btn_buscar;
         private System.Windows.Forms.DataGridView Dgv_principal;
         private System.Windows.Forms.Button Btn_nuevo;
-        private System.Windows.Forms.Button Btn_actualizar;
-        private System.Windows.Forms.Button Btn_eliminar;
-        private System.Windows.Forms.Button Btn_reporte;
-        private System.Windows.Forms.Button Btn_salir;
-        private System.Windows.Forms.TabControl Tbp_principal;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Txt_descripcion_ca;
         private System.Windows.Forms.Button Btn_guardar;
         private System.Windows.Forms.Button Btn_cancelar;
+        private System.Windows.Forms.TextBox Txt_descripcion_ca;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Btn_retornar;
     }
 }

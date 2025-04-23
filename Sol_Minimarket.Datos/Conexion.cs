@@ -48,7 +48,7 @@ namespace Sol_Minimarket.Datos
             return Cadena;
         }
 
-        public static Conexion getInsstancia()
+        public static Conexion getInstancia()
         {
             if (Con == null)
             {
