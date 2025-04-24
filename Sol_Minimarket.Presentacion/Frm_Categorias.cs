@@ -134,6 +134,7 @@ namespace Sol_Minimarket.Presentacion
         private void Btn_cancelar_Click(object sender, EventArgs e)
         {
             EstadoGuarda = 0;   //Sin niniguna accion
+            this.Codigo_ca = 0;
             Txt_descripcion_ca.Text = "";
             Txt_descripcion_ca.ReadOnly = true;
             this.Estado_BotonesPrincipales(true);
@@ -152,6 +153,26 @@ namespace Sol_Minimarket.Presentacion
         {
             this.Estado_Botonesprocesos(false);
             Tbp_principal.SelectedIndex = 0;
+            this.Codigo_ca = 0;
+        }
+
+        private void Btn_eliminar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value)))
+            {
+                MessageBox.Show("No se tiene informacion para visualizar", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Estas seguro de eliminar el registro que seleccionaste?", "Aviso del sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(Opcion==DialogResult.Yes)
+                {
+                    this.Codigo_ca = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value);
+                    //Enviar a ejecutar la eliminacion de datos
+                }
+                this.Codigo_ca = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["Codigo_ca"].Value);
+            }
         }
     }
 } 
