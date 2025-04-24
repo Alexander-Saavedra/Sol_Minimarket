@@ -112,6 +112,7 @@
             this.Dgv_principal.RowTemplate.Height = 28;
             this.Dgv_principal.Size = new System.Drawing.Size(600, 200);
             this.Dgv_principal.TabIndex = 3;
+            this.Dgv_principal.DoubleClick += new System.EventHandler(this.Dgv_principal_DoubleClick);
             // 
             // tabPage2
             // 
@@ -137,7 +138,7 @@
             this.Btn_retornar.Text = "Retornar";
             this.Btn_retornar.UseVisualStyleBackColor = true;
             this.Btn_retornar.Visible = false;
-            this.Btn_retornar.Click += new System.EventHandler(this.button1_Click);
+            this.Btn_retornar.Click += new System.EventHandler(this.Btn_retornar_Click);
             // 
             // Btn_guardar
             // 

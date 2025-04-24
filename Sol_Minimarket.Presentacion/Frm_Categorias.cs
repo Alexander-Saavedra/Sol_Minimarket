@@ -20,6 +20,7 @@ namespace Sol_Minimarket.Presentacion
             InitializeComponent();
         }
         #region "Mis variables"
+        int Codigo_ca = 0;
         int EstadoGuarda = 0; // Sin ninguna accion
         #endregion
 
@@ -56,7 +57,19 @@ namespace Sol_Minimarket.Presentacion
         {
             this.Btn_cancelar.Visible = lEstado;
             this.Btn_guardar.Visible = lEstado;
-            this.Btn_retornar.Visible = lEstado;
+            this.Btn_retornar.Visible = !lEstado;
+        }
+        private void Selecciona_item()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value)))
+            {
+                MessageBox.Show("No se tiene informacion para visualizar", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.Codigo_ca = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["Codigo_ca"].Value;  
+                Txt_descripcion_ca.Text = Convert.ToString(Dgv_principal.CurrentRow.Cells["descripcion_ca"].Value);
+            }
         }
         #endregion
         private void Frm_categorias_load(Object sender, EventArgs e)
@@ -74,18 +87,20 @@ namespace Sol_Minimarket.Presentacion
             {
                 E_Categorias oCa= new E_Categorias();
                 string Rpta = "";
-                oCa.Codigo_ca = 0;
+                oCa.Codigo_ca = this.Codigo_ca;
                 oCa.Descripcion_ca = Txt_descripcion_ca.Text.Trim();
                 Rpta = N_Categorias.Guardar_ca(EstadoGuarda, oCa);
                 if (Rpta=="OK")
-                {   
-
+                {
+                    this.Listado_ca("%");
                     MessageBox.Show("Los datos han sido guardados correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     EstadoGuarda = 0; //Sin ninguna accion
                     this.Estado_BotonesPrincipales(true);
                     this.Estado_Botonesprocesos(false);
                     Txt_descripcion_ca.Text = "";
+                    Txt_descripcion_ca.ReadOnly = true;
                     Tbp_principal.SelectedIndex = 0;
+                    this.Codigo_ca = 0;
                 }
                 else
                 {
@@ -108,19 +123,33 @@ namespace Sol_Minimarket.Presentacion
         private void Btn_actualizar_Click(object sender, EventArgs e)
         {
             EstadoGuarda = 2; //Actualizar registros
+            this.Estado_BotonesPrincipales(false);
+            this.Estado_Botonesprocesos(true);
+            this.Selecciona_item();
+            Tbp_principal.SelectedIndex = 1;
+            Txt_descripcion_ca.ReadOnly = false;
+            Txt_descripcion_ca.Focus();
+
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_cancelar_Click(object sender, EventArgs e)
         {
             EstadoGuarda = 0;   //Sin niniguna accion
             Txt_descripcion_ca.Text = "";
             Txt_descripcion_ca.ReadOnly = true;
             this.Estado_BotonesPrincipales(true);
+            this.Estado_Botonesprocesos(false);
+            Tbp_principal.SelectedIndex = 0;
+        }
+
+        private void Dgv_principal_DoubleClick(object sender, EventArgs e)
+        {
+            this.Selecciona_item();
+            this.Estado_Botonesprocesos(false);
+            Tbp_principal.SelectedIndex = 1;
+        }
+
+        private void Btn_retornar_Click(object sender, EventArgs e)
+        {
             this.Estado_Botonesprocesos(false);
             Tbp_principal.SelectedIndex = 0;
         }
