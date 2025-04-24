@@ -54,7 +54,9 @@ namespace Sol_Minimarket.Presentacion
         }
         private void Estado_Botonesprocesos(bool lEstado)
         {
-
+            this.Btn_cancelar.Visible = lEstado;
+            this.Btn_guardar.Visible = lEstado;
+            this.Btn_retornar.Visible = lEstado;
         }
         #endregion
         private void Frm_categorias_load(Object sender, EventArgs e)
@@ -70,7 +72,25 @@ namespace Sol_Minimarket.Presentacion
             }
             else //se procede a registrar la informacion
             {
+                E_Categorias oCa= new E_Categorias();
+                string Rpta = "";
+                oCa.Codigo_ca = 0;
+                oCa.Descripcion_ca = Txt_descripcion_ca.Text.Trim();
+                Rpta = N_Categorias.Guardar_ca(EstadoGuarda, oCa);
+                if (Rpta=="OK")
+                {   
 
+                    MessageBox.Show("Los datos han sido guardados correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    EstadoGuarda = 0; //Sin ninguna accion
+                    this.Estado_BotonesPrincipales(true);
+                    this.Estado_Botonesprocesos(false);
+                    Txt_descripcion_ca.Text = "";
+                    Tbp_principal.SelectedIndex = 0;
+                }
+                else
+                {
+                    MessageBox.Show(Rpta, "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -78,7 +98,9 @@ namespace Sol_Minimarket.Presentacion
         {
             EstadoGuarda = 1; //Nuevos registros
             this.Estado_BotonesPrincipales(false);
+            this.Estado_Botonesprocesos(true);
             Txt_descripcion_ca.Text = "";
+            Txt_descripcion_ca.ReadOnly = false;
             Tbp_principal.SelectedIndex = 1;
             Txt_descripcion_ca.Focus();
         }
@@ -92,6 +114,15 @@ namespace Sol_Minimarket.Presentacion
         {
 
         }
+
+        private void Btn_cancelar_Click(object sender, EventArgs e)
+        {
+            EstadoGuarda = 0;   //Sin niniguna accion
+            Txt_descripcion_ca.Text = "";
+            Txt_descripcion_ca.ReadOnly = true;
+            this.Estado_BotonesPrincipales(true);
+            this.Estado_Botonesprocesos(false);
+            Tbp_principal.SelectedIndex = 0;
+        }
     }
-}
-//ffffff
+} 

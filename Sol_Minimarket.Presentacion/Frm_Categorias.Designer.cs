@@ -35,6 +35,7 @@
             this.Btn_buscar = new System.Windows.Forms.Button();
             this.Dgv_principal = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Btn_retornar = new System.Windows.Forms.Button();
             this.Btn_guardar = new System.Windows.Forms.Button();
             this.Btn_cancelar = new System.Windows.Forms.Button();
             this.Txt_descripcion_ca = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@
             this.Btn_actualizar = new System.Windows.Forms.Button();
             this.Btn_salir = new System.Windows.Forms.Button();
             this.Btn_nuevo = new System.Windows.Forms.Button();
-            this.Btn_retornar = new System.Windows.Forms.Button();
             this.Tbp_principal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_principal)).BeginInit();
@@ -128,6 +128,17 @@
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // Btn_retornar
+            // 
+            this.Btn_retornar.Location = new System.Drawing.Point(386, 78);
+            this.Btn_retornar.Name = "Btn_retornar";
+            this.Btn_retornar.Size = new System.Drawing.Size(100, 30);
+            this.Btn_retornar.TabIndex = 4;
+            this.Btn_retornar.Text = "Retornar";
+            this.Btn_retornar.UseVisualStyleBackColor = true;
+            this.Btn_retornar.Visible = false;
+            this.Btn_retornar.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Btn_guardar
             // 
             this.Btn_guardar.Location = new System.Drawing.Point(280, 78);
@@ -148,6 +159,7 @@
             this.Btn_cancelar.Text = "Cancelar";
             this.Btn_cancelar.UseVisualStyleBackColor = true;
             this.Btn_cancelar.Visible = false;
+            this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 
             // Txt_descripcion_ca
             // 
@@ -211,17 +223,6 @@
             this.Btn_nuevo.Text = "Nuevo";
             this.Btn_nuevo.UseVisualStyleBackColor = true;
             this.Btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
-            // 
-            // Btn_retornar
-            // 
-            this.Btn_retornar.Location = new System.Drawing.Point(386, 78);
-            this.Btn_retornar.Name = "Btn_retornar";
-            this.Btn_retornar.Size = new System.Drawing.Size(100, 30);
-            this.Btn_retornar.TabIndex = 4;
-            this.Btn_retornar.Text = "Retornar";
-            this.Btn_retornar.UseVisualStyleBackColor = true;
-            this.Btn_retornar.Visible = false;
-            this.Btn_retornar.Click += new System.EventHandler(this.button1_Click);
             // 
             // Frm_Categorias
             // 
