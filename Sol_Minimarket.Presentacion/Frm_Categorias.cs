@@ -166,13 +166,25 @@ namespace Sol_Minimarket.Presentacion
             {
                 DialogResult Opcion;
                 Opcion = MessageBox.Show("Estas seguro de eliminar el registro que seleccionaste?", "Aviso del sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                
                 if(Opcion==DialogResult.Yes)
                 {
+                    String Rpta = "";
                     this.Codigo_ca = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value);
-                    //Enviar a ejecutar la eliminacion de datos
+                    Rpta = N_Categorias.Eliminar_ca(this.Codigo_ca);
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.Listado_ca("%");
+                        this.Codigo_ca = 0;
+                        MessageBox.Show("Registro eliminado", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
-                this.Codigo_ca = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["Codigo_ca"].Value);
             }
         }
+
+        private void Btn_buscar_Click(object sender, EventArgs e)
+        {
+            this.Listado_ca(Txt_buscar.Text.Trim());
+        }
     }
-} 
+}
