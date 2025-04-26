@@ -165,7 +165,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.35208cm</Top>
-        <Left>4.71523cm</Left>
+        <Left>4.27426cm</Left>
         <Height>1.2cm</Height>
         <Width>6.5875cm</Width>
         <Style>
@@ -175,10 +175,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.65972in</Height>
+    <Height>0.66666in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>5.83333in</Width>
   <Page>
     <PageHeader>
       <Height>2.74037cm</Height>
@@ -195,6 +195,7 @@
                   <Value>Reporte de Categorias</Value>
                   <Style>
                     <FontFamily>Times New Roman</FontFamily>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -204,8 +205,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.08162cm</Top>
-          <Left>4.71523cm</Left>
+          <Top>0.42856cm</Top>
+          <Left>4.27426cm</Left>
           <Height>0.6cm</Height>
           <Width>9.83778cm</Width>
           <Style>
@@ -223,7 +224,7 @@
           <Value>Logo_minimarket</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.42856cm</Top>
-          <Left>1.46967cm</Left>
+          <Left>1.11689cm</Left>
           <Height>1.5cm</Height>
           <Width>1.5cm</Width>
           <ZIndex>1</ZIndex>
@@ -252,8 +253,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>2.10495cm</Top>
-          <Left>0.7112cm</Left>
+          <Top>2.06967cm</Top>
+          <Left>0.30551cm</Left>
           <Height>0.6cm</Height>
           <Width>3.38194cm</Width>
           <ZIndex>2</ZIndex>
@@ -275,7 +276,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>2.02847cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -297,7 +298,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
           <Top>0.86361cm</Top>
-          <Left>4.71523cm</Left>
+          <Left>4.27426cm</Left>
           <Height>0.6cm</Height>
           <Width>7.05083cm</Width>
           <Style>

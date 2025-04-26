@@ -186,5 +186,27 @@ namespace Sol_Minimarket.Presentacion
         {
             this.Listado_ca(Txt_buscar.Text.Trim());
         }
+
+        private void Btn_reporte_Click(object sender, EventArgs e)
+        {
+            Reportes.Frm_Rpt_Categorias oRpt1 = new Reportes.Frm_Rpt_Categorias();
+            oRpt1.Txt_p1.Text = Txt_buscar.Text;
+            oRpt1.ShowDialog();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_salir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_buscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
