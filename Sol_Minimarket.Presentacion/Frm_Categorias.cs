@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Sol_Minimarket.Datos;
 using Sol_Minimarket.Entidades;
 using Sol_Minimarket.Negocio;
 
@@ -37,7 +37,7 @@ namespace Sol_Minimarket.Presentacion
         {
             try
             {
-                Dgv_principal.DataSource = N_Categorias.Listado_ca(cTexto);
+                Dgv_principal.DataSource = Conexion.ExtraeDatos("exec USP_Listado_ca '%'");
                 this.Formato_ca();
             }
             catch (Exception ex)
@@ -94,7 +94,7 @@ namespace Sol_Minimarket.Presentacion
                 {
                     this.Listado_ca("%");
                     MessageBox.Show("Los datos han sido guardados correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    EstadoGuarda = 0; //Sin ninguna accion
+                    EstadoGuarda = 1; //Sin ninguna accion
                     this.Estado_BotonesPrincipales(true);
                     this.Estado_Botonesprocesos(false);
                     Txt_descripcion_ca.Text = "";

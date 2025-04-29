@@ -20,7 +20,7 @@ namespace Sol_Minimarket.Datos
 
             try
             {
-                SQLCon = Conexion.getInstancia().CrearConexion();
+                SQLCon = Conexion.GetConnection();
                 SqlCommand Comando = new SqlCommand("USP_Listado_ca", SQLCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
@@ -45,12 +45,12 @@ namespace Sol_Minimarket.Datos
             SqlConnection Sqlcon = new SqlConnection();
             try
             {
-                Sqlcon = Conexion.getInstancia().CrearConexion();
+                Sqlcon = Conexion.GetConnection();
                 SqlCommand Comando =  new SqlCommand("USP_Guardar_ca", Sqlcon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion;
                 Comando.Parameters.Add("@nCodigo_ca", SqlDbType.Int).Value = oCa.Codigo_ca;
-                Comando.Parameters.Add("@nDescripcion_ca", SqlDbType.VarChar).Value = oCa.Descripcion_ca;
+                Comando.Parameters.Add("@cDescripcion_ca", SqlDbType.VarChar).Value = oCa.Descripcion_ca;
                 Sqlcon.Open();
                 Rpta = Comando.ExecuteNonQuery()==1 ? "OK" : "No se pueden registrar los datos";
             }
@@ -70,7 +70,7 @@ namespace Sol_Minimarket.Datos
             SqlConnection Sqlcon = new SqlConnection();
             try
             {
-                Sqlcon = Conexion.getInstancia().CrearConexion();
+                Sqlcon = Conexion.GetConnection();
                 SqlCommand Comando = new SqlCommand("USP_Eliminar_ca", Sqlcon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@nCodigo_ca", SqlDbType.Int).Value = Codigo_ca;

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Categorias));
             this.Tbp_principal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -44,11 +44,11 @@
             this.Txt_descripcion_ca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Btn_eliminar = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Btn_reporte = new System.Windows.Forms.Button();
             this.Btn_actualizar = new System.Windows.Forms.Button();
             this.Btn_salir = new System.Windows.Forms.Button();
             this.Btn_nuevo = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Tbp_principal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_principal)).BeginInit();
@@ -114,8 +114,8 @@
             // 
             this.Dgv_principal.AllowUserToAddRows = false;
             this.Dgv_principal.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.Dgv_principal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.Dgv_principal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_principal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_principal.Location = new System.Drawing.Point(20, 71);
             this.Dgv_principal.Name = "Dgv_principal";
@@ -208,6 +208,16 @@
             this.Btn_eliminar.UseVisualStyleBackColor = false;
             this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Agregar_nuevo.png");
+            this.imageList1.Images.SetKeyName(1, "Actualizar.png");
+            this.imageList1.Images.SetKeyName(2, "Eliminar_archivo.png");
+            this.imageList1.Images.SetKeyName(3, "Reporte.png");
+            this.imageList1.Images.SetKeyName(4, "Salida.gif");
+            // 
             // Btn_reporte
             // 
             this.Btn_reporte.BackColor = System.Drawing.Color.Gold;
@@ -263,16 +273,6 @@
             this.Btn_nuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_nuevo.UseVisualStyleBackColor = false;
             this.Btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Agregar_nuevo.png");
-            this.imageList1.Images.SetKeyName(1, "Actualizar.png");
-            this.imageList1.Images.SetKeyName(2, "Eliminar_archivo.png");
-            this.imageList1.Images.SetKeyName(3, "Reporte.png");
-            this.imageList1.Images.SetKeyName(4, "Salida.gif");
             // 
             // Frm_Categorias
             // 

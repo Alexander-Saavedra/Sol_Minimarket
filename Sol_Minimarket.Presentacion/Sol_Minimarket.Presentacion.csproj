@@ -127,6 +127,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Sol_Minimarket.Datos\Sol_Minimarket.Datos.csproj">
+      <Project>{79B5D565-2CDA-452E-9007-9D43DDDEC1E7}</Project>
+      <Name>Sol_Minimarket.Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sol_Minimarket.Entidades\Sol_Minimarket.Entidades.csproj">
       <Project>{161a31fe-6ec1-47f7-892b-a1fa01ee2c7e}</Project>
       <Name>Sol_Minimarket.Entidades</Name>
