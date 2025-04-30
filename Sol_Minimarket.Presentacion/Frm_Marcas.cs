@@ -13,9 +13,9 @@ using Sol_Minimarket.Negocio;
 
 namespace Sol_Minimarket.Presentacion
 {
-    public partial class Frm_Categorias : Form
+    public partial class Frm_Marcas : Form
     {
-        public Frm_Categorias()
+        public Frm_Marcas()
         {
             InitializeComponent();
         }
@@ -29,9 +29,9 @@ namespace Sol_Minimarket.Presentacion
         private void Formato_ca()
         {
             Dgv_principal.Columns[0].Width = 100;
-            Dgv_principal.Columns[0].HeaderText = "codigo_ma";
+            Dgv_principal.Columns[0].HeaderText = "codigo_ca";
             Dgv_principal.Columns[1].Width = 300;
-            Dgv_principal.Columns[1].HeaderText = "Marca";
+            Dgv_principal.Columns[1].HeaderText = "categoria";
         }
         private void Listado_ca(String cTexto)
         {
@@ -67,12 +67,12 @@ namespace Sol_Minimarket.Presentacion
             }
             else
             {
-                this.Codigo_ca = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value);  
+                this.Codigo_ca = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["Codigo_ca"].Value);  
                 Txt_descripcion_ca.Text = Convert.ToString(Dgv_principal.CurrentRow.Cells["descripcion_ca"].Value);
             }
         }
         #endregion
-        private void Frm_Categorias_load(Object sender, EventArgs e)
+        private void Frm_Marcas_load(Object sender, EventArgs e)
         {
             this.Listado_ca("%");
         }

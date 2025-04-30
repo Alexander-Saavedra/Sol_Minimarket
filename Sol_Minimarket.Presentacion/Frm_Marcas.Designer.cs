@@ -1,6 +1,6 @@
 ﻿namespace Sol_Minimarket.Presentacion
 {
-    partial class Frm_Categorias
+    partial class Frm_Marcas
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Categorias));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Marcas));
             this.Tbp_principal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lbl_buscar = new System.Windows.Forms.Label();
@@ -275,7 +275,7 @@
             this.Btn_nuevo.UseVisualStyleBackColor = false;
             this.Btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
             // 
-            // Frm_Categorias
+            // Frm_Marcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -287,9 +287,9 @@
             this.Controls.Add(this.Btn_nuevo);
             this.Controls.Add(this.Btn_actualizar);
             this.Controls.Add(this.Btn_salir);
-            this.Name = "Frm_Categorias";
-            this.Text = "Categorias";
-            this.Load += new System.EventHandler(this.Frm_Categorias_load);
+            this.Name = "Frm_Marcas";
+            this.Text = "Marcas";
+            this.Load += new System.EventHandler(this.Frm_Marcas_load);
             this.Tbp_principal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
