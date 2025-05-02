@@ -33,7 +33,7 @@ namespace Sol_Minimarket.Datos
             try
             {
            //     string strConnect = "Data Source=" + Class1.ServerSQL + ";Initial Catalog=" + Class1.BDSQL + ";User ID=" + Class1.UsuarioSQL + ";Password=" + Class1.ContrasenaSQL + "";
-                string strConnect = "Data Source=" + Class1.ServerSQL + ";Initial Catalog=" + Class1.BDSQL + ";User ID=" + Class1.UsuarioSQL + ";Password=" + Class1.ContrasenaSQL + "";
+                string strConnect = "Data Source=" + Variable.ServerSQL + ";Initial Catalog=" + Variable.BDSQL + ";User ID=" + Variable.UsuarioSQL + ";Password=" + Variable.ContrasenaSQL + "";
                 return new SqlConnection(strConnect);
             }
             catch (SqlException ex)
@@ -81,6 +81,57 @@ namespace Sol_Minimarket.Datos
             Cn.Close();
 
             return dt;
+        }
+        public static Boolean EjecutarPro(string Procedimiento, params object[] Parametros)
+        {
+            Boolean exito = false;
+            SqlConnection cn = GetConnection();
+
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = Procedimiento;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandTimeout = 0;
+            cn.Open();
+            cmd.Connection = cn;
+            SqlCommandBuilder.DeriveParameters(cmd);
+            try
+            {
+                if ((Parametros != null))
+                {
+                    for (int i = 1; i <= Parametros.Length; i++)
+                    {
+                        if (Parametros[i - 1] != null)
+                        {
+                            if (Parametros[i - 1] is string)
+                            {
+                                if (Parametros[i - 1] == "")
+                                    Parametros[i - 1] = null;
+                            }
+                        }
+                        cmd.Parameters[i].Value = (Parametros[i - 1] == null ? DBNull.Value : Parametros[i - 1]);
+
+                    }
+                }
+                //foreach (SqlParameter p in cmd.Parameters)
+                //{
+                //    query = query.Replace(p.ParameterName, p.Value.ToString());
+                //}
+                //string q = cmd.CommandText;
+                cmd.ExecuteNonQuery();
+
+                exito = true;
+
+            }
+
+            catch (SqlException ex)
+            {
+                exito = false;
+                throw new Exception(ex.Message);
+            }
+
+            cn.Close();
+            return exito;
         }
     }
 }

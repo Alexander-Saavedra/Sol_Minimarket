@@ -41,7 +41,7 @@
             this.Btn_retornar = new System.Windows.Forms.Button();
             this.Btn_guardar = new System.Windows.Forms.Button();
             this.Btn_cancelar = new System.Windows.Forms.Button();
-            this.Txt_descripcion_ca = new System.Windows.Forms.TextBox();
+            this.Txt_descripcion_ma = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Btn_eliminar = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -132,7 +132,7 @@
             this.tabPage2.Controls.Add(this.Btn_retornar);
             this.tabPage2.Controls.Add(this.Btn_guardar);
             this.tabPage2.Controls.Add(this.Btn_cancelar);
-            this.tabPage2.Controls.Add(this.Txt_descripcion_ca);
+            this.tabPage2.Controls.Add(this.Txt_descripcion_ma);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
@@ -179,12 +179,12 @@
             this.Btn_cancelar.UseVisualStyleBackColor = false;
             this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 
-            // Txt_descripcion_ca
+            // Txt_descripcion_ma
             // 
-            this.Txt_descripcion_ca.Location = new System.Drawing.Point(195, 109);
-            this.Txt_descripcion_ca.Name = "Txt_descripcion_ca";
-            this.Txt_descripcion_ca.Size = new System.Drawing.Size(445, 26);
-            this.Txt_descripcion_ca.TabIndex = 1;
+            this.Txt_descripcion_ma.Location = new System.Drawing.Point(195, 109);
+            this.Txt_descripcion_ma.Name = "Txt_descripcion_ca";
+            this.Txt_descripcion_ma.Size = new System.Drawing.Size(445, 26);
+            this.Txt_descripcion_ma.TabIndex = 1;
             // 
             // label1
             // 
@@ -316,7 +316,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button Btn_guardar;
         private System.Windows.Forms.Button Btn_cancelar;
-        private System.Windows.Forms.TextBox Txt_descripcion_ca;
+        private System.Windows.Forms.TextBox Txt_descripcion_ma;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Btn_retornar;
         private System.Windows.Forms.ImageList imageList1;

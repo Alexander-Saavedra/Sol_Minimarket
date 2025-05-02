@@ -21,7 +21,7 @@ namespace Sol_Minimarket.Datos
             try
             {
                 SQLCon = Conexion.GetConnection();
-                SqlCommand Comando = new SqlCommand("USP_Listado_ca", SQLCon);
+                SqlCommand Comando = new SqlCommand("USP_Listado_ma", SQLCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
                 SQLCon.Open();
@@ -46,7 +46,7 @@ namespace Sol_Minimarket.Datos
             try
             {
                 Sqlcon = Conexion.GetConnection();
-                SqlCommand Comando =  new SqlCommand("USP_Guardar_ca", Sqlcon);
+                SqlCommand Comando =  new SqlCommand("USP_Guardar_ma", Sqlcon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion;
                 Comando.Parameters.Add("@nCodigo_ma", SqlDbType.Int).Value = oMa.Codigo_ma;
@@ -71,7 +71,7 @@ namespace Sol_Minimarket.Datos
             try
             {
                 Sqlcon = Conexion.GetConnection();
-                SqlCommand Comando = new SqlCommand("USP_Eliminar_ca", Sqlcon);
+                SqlCommand Comando = new SqlCommand("USP_Eliminar_ma", Sqlcon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@nCodigo_ma", SqlDbType.Int).Value = Codigo_ma;
                 Sqlcon.Open();  

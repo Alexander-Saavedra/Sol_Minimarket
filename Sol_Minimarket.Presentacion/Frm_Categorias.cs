@@ -29,9 +29,9 @@ namespace Sol_Minimarket.Presentacion
         private void Formato_ca()
         {
             Dgv_principal.Columns[0].Width = 100;
-            Dgv_principal.Columns[0].HeaderText = "codigo_ma";
+            Dgv_principal.Columns[0].HeaderText = "codigo_ca";
             Dgv_principal.Columns[1].Width = 300;
-            Dgv_principal.Columns[1].HeaderText = "Marca";
+            Dgv_principal.Columns[1].HeaderText = "Categoria";
         }
         private void Listado_ca(String cTexto)
         {
@@ -155,7 +155,6 @@ namespace Sol_Minimarket.Presentacion
             Tbp_principal.SelectedIndex = 0;
             this.Codigo_ca = 0;
         }
-
         private void Btn_eliminar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(Convert.ToString(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value)))
@@ -166,18 +165,26 @@ namespace Sol_Minimarket.Presentacion
             {
                 DialogResult Opcion;
                 Opcion = MessageBox.Show("Estas seguro de eliminar el registro que seleccionaste?", "Aviso del sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                
-                if(Opcion==DialogResult.Yes)
+
+                if (Opcion == DialogResult.Yes)
                 {
-                    String Rpta = "";
-                    this.Codigo_ca = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value);
-                    Rpta = N_Categorias.Eliminar_ca(this.Codigo_ca);
-                    if (Rpta.Equals("OK"))
+                    try
                     {
-                        this.Listado_ca("%");
-                        this.Codigo_ca = 0;
-                        MessageBox.Show("Registro eliminado", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        this.Codigo_ca = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value);
+                        if (Conexion.EjecutarPro("USP_Eliminar_ca", this.Codigo_ca))
+                        {
+                            MessageBox.Show("Registro eliminado", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            this.Listado_ca("%");
+                            this.Codigo_ca = 0;
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Registro eliminado", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+
                 }
             }
         }
@@ -205,6 +212,11 @@ namespace Sol_Minimarket.Presentacion
         }
 
         private void lbl_buscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

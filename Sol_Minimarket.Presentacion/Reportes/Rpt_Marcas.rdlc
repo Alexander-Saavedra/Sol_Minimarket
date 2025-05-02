@@ -2,14 +2,17 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix1">
+      <Tablix Name="Tablix3">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.0875cm</Width>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -18,7 +21,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox4">
+                    <Textbox Name="Textbox21">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -32,7 +35,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox4</rd:DefaultName>
+                      <rd:DefaultName>Textbox21</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -49,21 +52,52 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox6">
+                    <Textbox Name="Textbox23">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Categoria</Value>
+                              <Value>Marca</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <rd:DefaultName>Textbox23</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Aqua</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox25">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox25</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -85,21 +119,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="codigo_ca">
+                    <Textbox Name="codigo_ma">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!codigo_ca.Value</Value>
+                              <Value>=Fields!codigo_ma.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>codigo_ca</rd:DefaultName>
+                      <rd:DefaultName>codigo_ma</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -115,21 +149,51 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="descripcion_ca">
+                    <Textbox Name="descripcion_ma">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!descripcion_ca.Value</Value>
+                              <Value>=Fields!descripcion_ma.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>descripcion_ca</rd:DefaultName>
+                      <rd:DefaultName>descripcion_ma</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox26">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox26</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -151,6 +215,7 @@
           <TablixMembers>
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -165,9 +230,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.35208cm</Top>
-        <Left>4.27426cm</Left>
+        <Left>4.29189cm</Left>
         <Height>1.2cm</Height>
-        <Width>6.5875cm</Width>
+        <Width>7.5cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -181,7 +246,7 @@
   <Width>5.83333in</Width>
   <Page>
     <PageHeader>
-      <Height>3.42829cm</Height>
+      <Height>2.74037cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -192,7 +257,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de Categorias</Value>
+                  <Value>Reporte de Marcas</Value>
                   <Style>
                     <FontFamily>Times New Roman</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -205,8 +270,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.42856cm</Top>
-          <Left>4.27426cm</Left>
+          <Top>0.79644cm</Top>
+          <Left>3.7859cm</Left>
           <Height>0.6cm</Height>
           <Width>9.83778cm</Width>
           <Style>
@@ -223,8 +288,8 @@
           <Source>Embedded</Source>
           <Value>Logo_minimarket</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.42856cm</Top>
-          <Left>1.11689cm</Left>
+          <Top>0.24963cm</Top>
+          <Left>1.31644cm</Left>
           <Height>1.5cm</Height>
           <Width>1.5cm</Width>
           <ZIndex>1</ZIndex>
@@ -253,8 +318,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>2.06967cm</Top>
-          <Left>0.30551cm</Left>
+          <Top>1.89074cm</Top>
+          <Left>0.50506cm</Left>
           <Height>0.6cm</Height>
           <Width>3.38194cm</Width>
           <ZIndex>2</ZIndex>
@@ -297,8 +362,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.86361cm</Top>
-          <Left>4.27426cm</Left>
+          <Top>0.71423cm</Top>
+          <Left>3.88291cm</Left>
           <Height>0.6cm</Height>
           <Width>7.05083cm</Width>
           <Style>
@@ -334,7 +399,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>24b83ed6-bd2b-403f-a49b-08c40122f64b</rd:DataSourceID>
+      <rd:DataSourceID>4380e443-72e1-4796-92bf-d05b2eca08b4</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -344,22 +409,22 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="codigo_ca">
-          <DataField>codigo_ca</DataField>
+        <Field Name="codigo_ma">
+          <DataField>codigo_ma</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="descripcion_ca">
-          <DataField>descripcion_ca</DataField>
+        <Field Name="descripcion_ma">
+          <DataField>descripcion_ma</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet_MiniMarket</rd:DataSetName>
         <rd:SchemaPath>C:\Users\ALEX DESARROLLO SOFT\source\repos\Sol_Minimarket\Sol_Minimarket.Presentacion\Reportes\DataSet_MiniMarket.xsd</rd:SchemaPath>
-        <rd:TableName>USP_Listado_ca</rd:TableName>
+        <rd:TableName>USP_Listado_ma</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>USP_Listado_caTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>USP_Listado_maTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -371,5 +436,5 @@ gg==</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>a7dfa07e-97c7-487e-8f67-91a2f8ed7ee8</rd:ReportID>
+  <rd:ReportID>019c47f5-1326-4a1e-a98b-60f4a231c60d</rd:ReportID>
 </Report>

@@ -20,25 +20,25 @@ namespace Sol_Minimarket.Presentacion
             InitializeComponent();
         }
         #region "Mis variables"
-        int Codigo_ca = 0;
+        int Codigo_ma = 0;
         int EstadoGuarda = 0; // Sin ninguna accion
         #endregion
 
 
         #region "Mis metodos"
-        private void Formato_ca()
+        private void Formato_ma()
         {
             Dgv_principal.Columns[0].Width = 100;
-            Dgv_principal.Columns[0].HeaderText = "codigo_ca";
+            Dgv_principal.Columns[0].HeaderText = "codigo_ma";
             Dgv_principal.Columns[1].Width = 300;
-            Dgv_principal.Columns[1].HeaderText = "categoria";
+            Dgv_principal.Columns[1].HeaderText = "marcas";
         }
-        private void Listado_ca(String cTexto)
+        private void Listado_ma(String cTexto)
         {
             try
             {
-                Dgv_principal.DataSource = Conexion.ExtraeDatos("exec USP_Listado_ca '%'");
-                this.Formato_ca();
+                Dgv_principal.DataSource = Conexion.ExtraeDatos("exec USP_Listado_ma '%'");
+                this.Formato_ma();
             }
             catch (Exception ex)
             {
@@ -61,50 +61,52 @@ namespace Sol_Minimarket.Presentacion
         }
         private void Selecciona_item()
         {
-            if (string.IsNullOrEmpty(Convert.ToString(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value)))
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_principal.CurrentRow.Cells["codigo_ma"].Value)))
             {
                 MessageBox.Show("No se tiene informacion para visualizar", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                this.Codigo_ca = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["Codigo_ca"].Value);  
-                Txt_descripcion_ca.Text = Convert.ToString(Dgv_principal.CurrentRow.Cells["descripcion_ca"].Value);
+                this.Codigo_ma = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["Codigo_ma"].Value);  
+                Txt_descripcion_ma.Text = Convert.ToString(Dgv_principal.CurrentRow.Cells["descripcion_ma"].Value);
             }
         }
         #endregion
         private void Frm_Marcas_load(Object sender, EventArgs e)
         {
-            this.Listado_ca("%");
+            this.Listado_ma("%");
         }
 
         private void Btn_guardar_Click(object sender, EventArgs e)
         {
-            if (Txt_descripcion_ca.Text == String.Empty)
+            if (Txt_descripcion_ma.Text == String.Empty)
             {
                 MessageBox.Show("Falta ingresar datos requeridos (*)", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else //se procede a registrar la informacion
             {
-                E_Categorias oCa= new E_Categorias();
-                string Rpta = "";
-                oCa.Codigo_ca = this.Codigo_ca;
-                oCa.Descripcion_ca = Txt_descripcion_ca.Text.Trim();
-                Rpta = N_Categorias.Guardar_ca(EstadoGuarda, oCa);
-                if (Rpta=="OK")
+               
+                try
                 {
-                    this.Listado_ca("%");
-                    MessageBox.Show("Los datos han sido guardados correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    EstadoGuarda = 1; //Sin ninguna accion
-                    this.Estado_BotonesPrincipales(true);
-                    this.Estado_Botonesprocesos(false);
-                    Txt_descripcion_ca.Text = "";
-                    Txt_descripcion_ca.ReadOnly = true;
-                    Tbp_principal.SelectedIndex = 0;
-                    this.Codigo_ca = 0;
+
+           
+                    if (Conexion.EjecutarPro("USP_Guardar_ma", 1, 0, Txt_descripcion_ma.Text.Trim()))
+                    {
+                       this.Listado_ma("%");
+                        MessageBox.Show("Los datos han sido guardados correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        EstadoGuarda = 1; //Sin ninguna accion
+                        this.Estado_BotonesPrincipales(true);
+                        this.Estado_Botonesprocesos(false);
+                        Txt_descripcion_ma.Text = "";
+                        Txt_descripcion_ma.ReadOnly = true;
+                        Tbp_principal.SelectedIndex = 0;
+                        this.Codigo_ma = 0;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show(Rpta, "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Registro Guardado", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                 }
             }
         }
@@ -114,10 +116,10 @@ namespace Sol_Minimarket.Presentacion
             EstadoGuarda = 1; //Nuevos registros
             this.Estado_BotonesPrincipales(false);
             this.Estado_Botonesprocesos(true);
-            Txt_descripcion_ca.Text = "";
-            Txt_descripcion_ca.ReadOnly = false;
+            Txt_descripcion_ma.Text = "";
+            Txt_descripcion_ma.ReadOnly = false;
             Tbp_principal.SelectedIndex = 1;
-            Txt_descripcion_ca.Focus();
+            Txt_descripcion_ma.Focus();
         }
 
         private void Btn_actualizar_Click(object sender, EventArgs e)
@@ -127,16 +129,16 @@ namespace Sol_Minimarket.Presentacion
             this.Estado_Botonesprocesos(true);
             this.Selecciona_item();
             Tbp_principal.SelectedIndex = 1;
-            Txt_descripcion_ca.ReadOnly = false;
-            Txt_descripcion_ca.Focus();
+            Txt_descripcion_ma.ReadOnly = false;
+            Txt_descripcion_ma.Focus();
 
         }
         private void Btn_cancelar_Click(object sender, EventArgs e)
         {
             EstadoGuarda = 0;   //Sin niniguna accion
-            this.Codigo_ca = 0;
-            Txt_descripcion_ca.Text = "";
-            Txt_descripcion_ca.ReadOnly = true;
+            this.Codigo_ma = 0;
+            Txt_descripcion_ma.Text = "";
+            Txt_descripcion_ma.ReadOnly = true;
             this.Estado_BotonesPrincipales(true);
             this.Estado_Botonesprocesos(false);
             Tbp_principal.SelectedIndex = 0;
@@ -153,12 +155,12 @@ namespace Sol_Minimarket.Presentacion
         {
             this.Estado_Botonesprocesos(false);
             Tbp_principal.SelectedIndex = 0;
-            this.Codigo_ca = 0;
+            this.Codigo_ma = 0;
         }
 
         private void Btn_eliminar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Convert.ToString(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value)))
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_principal.CurrentRow.Cells["codigo_ma"].Value)))
             {
                 MessageBox.Show("No se tiene informacion para visualizar", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -169,29 +171,36 @@ namespace Sol_Minimarket.Presentacion
                 
                 if(Opcion==DialogResult.Yes)
                 {
-                    String Rpta = "";
-                    this.Codigo_ca = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value);
-                    Rpta = N_Categorias.Eliminar_ca(this.Codigo_ca);
-                    if (Rpta.Equals("OK"))
+                    try
                     {
-                        this.Listado_ca("%");
-                        this.Codigo_ca = 0;
+
+                    this.Codigo_ma = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["codigo_ma"].Value);
+                    if(Conexion.EjecutarPro("USP_Eliminar_ma", this.Codigo_ma))
+                    {
                         MessageBox.Show("Registro eliminado", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        this.Listado_ma("%");
+                        this.Codigo_ma = 0;
                     }
+                    }catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Mensaje de error", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+
+                    }
+
                 }
             }
         }
 
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
-            this.Listado_ca(Txt_buscar.Text.Trim());
+            this.Listado_ma(Txt_buscar.Text.Trim());
         }
 
         private void Btn_reporte_Click(object sender, EventArgs e)
         {
-            Reportes.Frm_Rpt_Categorias oRpt1 = new Reportes.Frm_Rpt_Categorias();
-            oRpt1.Txt_p1.Text = Txt_buscar.Text;
-            oRpt1.ShowDialog();
+            //Reportes.Frm_Rpt_Marcas oRpt1 = new Reportes.Frm_Rpt_Categorias();
+            //oRpt1.Txt_p1.Text = Txt_buscar.Text;
+            //oRpt1.ShowDialog();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
